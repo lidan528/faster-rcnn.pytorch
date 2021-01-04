@@ -164,6 +164,11 @@ Install all the python dependencies using pip:
 pip install -r requirements.txt
 ```
 
+ADD by lidan528:  extra steps are need to compile:
+
+This is used for torch0.4, for torch1.0, go to the torch1.0 branch!
+
+
 Compile the cuda dependencies using following simple commands:
 
 ```
