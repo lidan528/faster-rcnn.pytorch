@@ -140,11 +140,27 @@ Install all the python dependencies using pip:
 pip install -r requirements.txt
 ```
 
+**Added by lidan528**: extra steps needed to compile:
+
+- first, set enviroment path:(you should first identify and modify your cuda version for following commands, for me it's 10.2)
+```
+export CUDA_PATH=/usr/local/cuda/
+export PATH=/usr/local/cuda-10.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+```
+
 Compile the cuda dependencies using following simple commands:
 
 ```
 cd lib
-python setup.py build develop
+python3 setup.py build develop
+```
+
+**Added by lidan528**: if you use this commmand in lab server group, perhaps you have no permission to modify files in `python3.7/site-packages`, so you should run the following command instead:
+
+```
+cd lib
+python3 setup.py build develop --user
 ```
 
 It will compile all the modules you need, including NMS, ROI_Pooing, ROI_Align and ROI_Crop. The default version is compiled with Python 2.7, please compile by yourself if you are using a different python version.
